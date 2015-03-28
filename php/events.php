@@ -40,6 +40,11 @@
     		"year" => $r[3]
     	);
     }
+    $query = "SELECT name FROM collaborator WHERE id = $eventCollab";
+    $res = queryMysql($query) or die(mysql_error());
+    if ($r = mysql_fetch_row($res))
+    	$eventCollab = $r[0];
+
     $events = array(
     "id" => $eventID,
     "title" => $eventTitle,
@@ -79,7 +84,6 @@
     $res = queryMysql($query) or die(mysql_error());
     $numrows = mysql_num_rows($res);
     $joinedArray;
-
     for($i = 0; $i < $numrows; $i++){
     	$r = mysql_fetch_row($res);
     	$joinedArray[$i] =  array(
@@ -88,7 +92,12 @@
     		"program" => $r[2],
     		"year" => $r[3]
     	);
-    }  
+    }
+    $query = "SELECT name FROM collaborator WHERE id = '$eventCollab'";
+    $res = queryMysql($query) or die(mysql_error());
+    if ($r = mysql_fetch_row($res))
+    	$eventCollab = $r[0];
+
     $events = array(
     "id" => $eventID,
     "title" => $eventTitle,
