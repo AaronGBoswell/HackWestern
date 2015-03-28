@@ -7,9 +7,9 @@ GrapeVine.controller("eventControl", function($scope, $http, $modal) {
 	});
 
 	$scope.join = function(ev){
-		console.log(ev);
+		//console.log(ev);
 		$http.get("php/join.php?userid=1&eventid="+ev.id).success(function(data){
-			console.log(data);
+			//console.log(data);
 		});
 	};
 
@@ -56,15 +56,7 @@ GrapeVine.controller('setsControl', function($scope, $modalInstance) {
 
 });
 
-GrapeVine.controller('modInstControl', function($scope, $modalInstance) {
-
-  $scope.ok = function () {
-    $modalInstance.close();
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
+GrapeVine.controller('modInstControl', function($scope, $modalInstance, $http, $filter) {
 
   $scope.openy = function($event) {
 
@@ -76,7 +68,7 @@ GrapeVine.controller('modInstControl', function($scope, $modalInstance) {
   };
 
   $scope.today = function() {
-	$scope.dt = new Date();
+	$scope.myDate = new Date();
   };
 
   $scope.today();
@@ -93,14 +85,32 @@ GrapeVine.controller('modInstControl', function($scope, $modalInstance) {
   };
 
   $scope.clear = function () {
-	$scope.dt = null;
+	$scope.myDate = null;
   };
 
   //For the timepicker
-  $scope.mytime = new Date();
+  $scope.myTime = new Date();
   $scope.hstep = 1;
   $scope.mstep = 15;
   $scope.ismeridian = true;
+
+  $scope.check = function(valid, newEv, myDate, myTime) {
+  	if (valid) {
+  		$scope.mySub(newEv, myDate, myTime);
+  	}
+  }
+
+  $scope.mySub = function(newEv, myDate, myTime) {
+
+  	var myDay = myDate.toDateString();
+  	var timo = myTime.toTimeString();
+  	var fullDate = $filter('date')(myDay + ' ' + timo, 'short');
+
+  	$http.get("php/createEvent.php?collabid=1&date=" + fullDate + "&title=" + newEv.title + "&location=" + newEv.location + "&description=" + newEv.description).success(function(data) {
+  		$modalInstance.close();
+  	});
+
+  };	
 
 });
 
