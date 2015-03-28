@@ -5,7 +5,7 @@
 #eventCon {
     width: 100%;
     margin: 0 auto;
-    background-color: #8832B2;
+    background-color: #c91a9b;
     border-radius: 20px;
 }
 
@@ -41,13 +41,14 @@
 #eventCon ul li a {
     margin: 20px auto;
     display: block;
+    color: #ff00ff;
 }
-.green {
-    background-color: #09B25F;
+.cyan {
+    background-color: #00ffff;
 }
 
-.green:hover {
-    background-color: #14CC72;   
+.cyan:hover {
+    background-color: #00C2C2;   
 }
 
 .yellow {
@@ -62,3 +63,57 @@ h1 {
  font-family: 'Oswald', sans-serif;   
 }
 
+
+/*Mobile Nav*/
+
+.top-bar{
+	background: #fff;
+	text-align: center;
+}
+
+.top-bar.expanded .title-area {
+	background: #fff;
+}
+
+.top-bar .toggle-topbar.menu-icon a span:after {
+	box-shadow: 0 0 0 2px #c91a9b, 0 7px 0 2px #c91a9b, 0 14px 0 2px #c91a9b;
+}
+
+#mobileNav li a {
+	display: block;
+	padding: 5px 0 5px 0;
+	color: #8ea76b;
+}
+
+#mobileNav li a:hover {
+	background-color: #efefef;
+}
+
+#mobileNav {
+	margin: 0;
+}
+
+#mobileNav li {
+	border-bottom: 1px solid #efefef;
+}
+
+#mobileNav li:first-child {
+	border-top: 1px solid #efefef;
+}
+
+#mobileNav li:last-child {
+	margin-bottom: 10px;
+}
+
+/*Logo*/
+
+#logoCon {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+#logo {
+	display: block;
+	max-width: 80%;
+	margin: 0 auto;
+}
