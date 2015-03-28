@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang='en' ng-app>
+<html lang='en' ng-app="GrapeVine" ng-controller="eventControl">
 <head>
+	<meta charset="utf-8">
 	<title>Student Dashboard</title>
+	<link href="css/foundation.min.css">
+	<link href="css/normalize.css">
 </head>
 <body>
-
+	<div>
+		Search:
+		<input ng-model="query">
+	</div>
+	<p ng-repeat="event in events | filter:query | orderBy:'name'">{{event.name}}</p>
+	
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/controllers.js"></script>
 </body>
-</html
+</html>
