@@ -12,7 +12,13 @@ GrapeVine.controller("eventControl", function($scope, $http, $modal) {
 			console.log(data);
 		});
 	};
-
+	$scope.signup = function(){
+		var urldata = "?year="+$scope.year+"&program="+$scope.program+"&firstname="+$scope.firstname+"&lastname="+$scope.lastname+"&username="+$scope.username+"&password="+$scope.password;
+		console.log(urldata);
+		$http.get("php/signup.php"+urldata).success(function(data){
+			console.log(data);
+		});
+	};
 	$scope.open = function(size) {
 
 	    var modalInstance = $modal.open({
