@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "fname": "Test",
+  "lname": "User",
+  "interests":["Testing","Coding","Hacking"],
+  "Major": "Computer science",
+  "Year": 2018
+}
