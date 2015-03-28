@@ -5,3 +5,9 @@ GrapeVine.controller("eventControl", function($scope, $http) {
 		$scope.events = data.events;
 	});
 });
+
+GrapeVine.directive('eventCard', function() {
+  return {
+    templateUrl: 'event_card.html'
+  };
+});
