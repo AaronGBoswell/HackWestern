@@ -9,7 +9,7 @@ GrapeVine.controller("eventControl", function($scope, $http, $modal, $log) {
 	$scope.open = function(size) {
 
     var modalInstance = $modal.open({
-      templateUrl: 'settings_tpl.html',
+      templateUrl: 'tpl/new_event.html',
       controller: 'modInstControl',
       size: size,
       resolve: {}
