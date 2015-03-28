@@ -15,13 +15,37 @@ GrapeVine.controller("eventControl", function($scope, $http, $modal) {
 
 	$scope.open = function(size) {
 
-    var modalInstance = $modal.open({
-      templateUrl: 'tpl/new_event.html',
-      controller: 'modInstControl',
-      size: size,
-      resolve: {}
-    });
+	    var modalInstance = $modal.open({
+	      templateUrl: 'tpl/new_event.html',
+	      controller: 'modInstControl',
+	      size: size,
+	      resolve: {}
+	    });
+
 	}
+
+	$scope.sets = function(size) {
+
+		var modalInstance = $modal.open({
+			templateUrl: 'tpl/settings.html',
+			controller: 'setsControl',
+			size: size,
+			resolve: {}
+		});
+
+	}
+
+	$scope.myUsers = function(ev) {
+
+	}
+});
+
+GrapeVine.controller('setsControl', function($scope, $modalInstance) {
+
+	$scope.good = function () {
+		$modalInstance.close();
+	};
+
 });
 
 GrapeVine.controller('modInstControl', function($scope, $modalInstance) {
