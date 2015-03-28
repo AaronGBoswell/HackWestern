@@ -1,9 +1,0 @@
-[28-Mar-2015 07:25:18 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/grapmbht/public_html/app/connectDB.php on line 7
-[28-Mar-2015 07:30:29 America/New_York] PHP Warning:  mysqli_connect(): (42000/1044): Access denied for user 'grapmbht_root'@'localhost' to database 'grapmbht_db' in /home/grapmbht/public_html/app/connectDB.php on line 7
-[28-Mar-2015 07:36:00 America/New_York] PHP Warning:  mysqli_connect(): (42000/1044): Access denied for user 'grapmbht_user'@'localhost' to database 'grapmbht_db' in /home/grapmbht/public_html/app/connectDB.php on line 7
-[28-Mar-2015 07:45:30 America/New_York] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/grapmbht/public_html/app/events.php on line 5
-[28-Mar-2015 07:45:34 America/New_York] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/grapmbht/public_html/app/events.php on line 5
-[28-Mar-2015 07:47:06 America/New_York] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/grapmbht/public_html/app/events.php on line 5
-[28-Mar-2015 07:47:07 America/New_York] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/grapmbht/public_html/app/events.php on line 5
-[28-Mar-2015 07:47:30 America/New_York] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/grapmbht/public_html/app/events.php on line 33
-[28-Mar-2015 07:57:22 America/New_York] PHP Parse error:  syntax error, unexpected end of file in /home/grapmbht/public_html/app/events.php on line 64
