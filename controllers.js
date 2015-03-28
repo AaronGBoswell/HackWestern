@@ -6,7 +6,7 @@ GrapeVine.controller("eventControl", function($scope, $http) {
 	});
 	$scope.join = function(ev){
 		console.log(ev);
-		$http.get('join.php',{userid:"1",projectid:ev.id}).success(function(data){
+		$http.post('join.php',{userid:1,projectid:ev.id}).success(function(data){
 			console.log(data);
 		});
 	};
