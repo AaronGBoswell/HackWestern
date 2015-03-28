@@ -35,8 +35,16 @@ GrapeVine.controller("eventControl", function($scope, $http, $modal) {
 
 	}
 
-	$scope.myUsers = function(ev) {
+	$scope.joined = function(ev) {
 
+		var result = "", eLength = ev.joined.length, i;
+
+		for (i=0;i<eLength;i++) {
+			var holder = ev.joined[i].fName + " " + ev.joined[i].lName + "\n";
+			result = result.concat(holder);
+		}
+
+		return result;
 	}
 });
 
