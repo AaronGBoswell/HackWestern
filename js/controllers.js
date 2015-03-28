@@ -65,8 +65,49 @@ GrapeVine.controller('modInstControl', function($scope, $modalInstance) {
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
+
+  $scope.openy = function($event) {
+
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
+
+  };
+
+  $scope.today = function() {
+	$scope.dt = new Date();
+  };
+
+  $scope.today();
+
+  $scope.toggleMin = function() {
+	$scope.minDate = $scope.minDate ? null : new Date();
+  };
+	
+  $scope.toggleMin();
+
+  $scope.dateOptions = {
+	formatYear: 'yy',
+	startingDay: 1
+  };
+
+  $scope.clear = function () {
+	$scope.dt = null;
+  };
+
 });
 
+GrapeVine.directive('datepickerPopup', function (){
+    return {
+        restrict: 'EAC',
+        require: 'ngModel',
+        link: function(scope, element, attr, controller) {
+      //remove the default formatter from the input directive to prevent conflict
+      controller.$formatters.shift();
+  }
+}
+});
 GrapeVine.directive('eventCard', function() {
   return {
     templateUrl: 'tpl/event_card.html'

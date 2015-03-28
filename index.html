@@ -55,14 +55,15 @@
         </div>
         <div class="medium-12 large-7 large-offset-3 columns show-for-medium-up">
             <nav id="mainNav">
-                  <li><a href="#">Filter 1</a></li>
-                  <li><a href="#">Filter 2</a></li>
-                  <li><a href="#">Filter 3</a></li>
-                  <li><a href="#">Filter 4</a></li>
                   <li><a ng-click="open()">New Event</a></li>
                   <li><a ng-click="sets()">Settings</a></li>
             </nav>
         </div>
+        <tabset>
+          <tab heading="All Events"></tab>
+          <tab heading="Recommended"></tab>
+          <tab heading="Joined"></tab>
+        </tabset>
       </div><!--end logo con-->
 
 		<p ng-repeat="ev in events| filter:query"><event-card></event-card></p>
