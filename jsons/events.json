@@ -1,5 +1,4 @@
-{
-  "events":[{
+{"events":[{
   "id": 2,
   "title": "Hack Western",
   "collaborator": "MLH",
@@ -17,5 +16,4 @@
   "location": "The wave?",
   "photo": "breakfast.jpeg",
   "url": "hackwestern.com"
-}]
-}
+}]}

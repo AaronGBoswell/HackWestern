@@ -1,9 +1,7 @@
-var GrapeVine = angular.module('GrapeVine', []);
+var GrapeVine = angular.module("GrapeVine", []);
 
-GrapeVine.controller('eventControl', function($scope) {
-	$scope.events = [
-		{'name': 'Hackathon'},
-		{'name': 'Marathon'},
-		{'name': 'Code Session'}
-	];
+GrapeVine.controller("eventControl", function($scope, $http) {
+	$http.get('jsons/events.json').success(function(data) {
+		$scope.events = data.events;
+	});
 });
