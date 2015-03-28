@@ -13,6 +13,14 @@ GrapeVine.controller("eventControl", function($scope, $http, $modal) {
 		});
 	};
 
+	$scope.leave = function(ev) {
+
+		$http.get("php/leave.php?userid=1&eventid="+ev.id).success(function(data) {
+			
+		})
+
+	}
+
 	$scope.open = function(size) {
 
 	    var modalInstance = $modal.open({
