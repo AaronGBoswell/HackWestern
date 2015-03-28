@@ -2,8 +2,9 @@
   include_once 'connectDB.php';
   session_start();
   $userid = sanitizeString($_GET['userid']);
-  $projectid = sanitizeString($_GET['projectid']);
+  $eventid = sanitizeString($_GET['eventid']);
 
-  echo $userid;
-  echo $projectid;
+  $query = "INSERT INTO joins VALUES (NULL,'$userid', '$eventid')";
+  $result = queryMysql($query);
+
 ?>
