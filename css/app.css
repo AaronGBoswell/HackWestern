@@ -36,6 +36,8 @@
 }
 #eventCon ul li {
     color: #FFB219;
+    margin: 10px auto;
+    display: block;
 }
 
 #eventCon ul li a {
@@ -44,11 +46,11 @@
     color: #ff00ff;
 }
 .cyan {
-    background-color: #00ffff;
+    background-color: #00aeef;
 }
 
 .cyan:hover {
-    background-color: #00C2C2;   
+    background-color: #008FC4;   
 }
 
 .yellow {
@@ -82,7 +84,7 @@ h1 {
 #mobileNav li a {
 	display: block;
 	padding: 5px 0 5px 0;
-	color: #8ea76b;
+	color: #00aeef;
 }
 
 #mobileNav li a:hover {
@@ -104,6 +106,17 @@ h1 {
 #mobileNav li:last-child {
 	margin-bottom: 10px;
 }
+
+/*Desktop Nav*/
+
+#mainNav li {
+    display: inline;
+    list-style-type: none;
+    float: right;
+    margin-right: 20px;
+    margin-top: 90px;
+}
+
 
 /*Logo*/
 
