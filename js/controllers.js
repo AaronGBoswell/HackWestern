@@ -96,6 +96,12 @@ GrapeVine.controller('modInstControl', function($scope, $modalInstance) {
 	$scope.dt = null;
   };
 
+  //For the timepicker
+  $scope.mytime = new Date();
+  $scope.hstep = 1;
+  $scope.mstep = 15;
+  $scope.ismeridian = true;
+
 });
 
 GrapeVine.directive('datepickerPopup', function (){

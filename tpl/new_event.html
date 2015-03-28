@@ -3,12 +3,12 @@
     <div class="row">
     <div class="large-12 columns">
       <label id="title">
-        <input ng-required="true" type="text" placeholder="Title" />
+        <input ng-required="true" type="text" ng-model="title" placeholder="Title" />
       </label>
     </div>
     <div class="large-12 columns">
       <label>
-        <input ng-required="true" type="text" placeholder="Location" />
+        <input ng-required="true" type="text" ng-model="location" placeholder="Location" />
       </label>
     </div>
     <div class="row">
@@ -21,11 +21,16 @@
             </p>
         </div>
     </div>
+    <div class="row">
+    	<div class="large-12 columns">
+    		<timepicker ng-model="mytime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    	</div>
+    </div>
   </div>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns">
       <label>
-        <textarea ng-required="true" placeholder="Description"></textarea>
+        <textarea ng-required="true" ng-model="description" placeholder="Description"></textarea>
         <div class="small-12 medium-12 large-12 columns"><a href="#" id="submit" class="button rounded expand" ng-click="ok()">SUBMIT</a></div>
       </label>
     </div>
