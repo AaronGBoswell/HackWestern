@@ -2,7 +2,7 @@
   include_once 'connectDB.php';
   $userid = 1;
   $query  = 'SELECT * FROM _event';
-  $result = queryMysql($query);
+  $result = queryMysql($query) or die(mysql_error());
 
   if (!$result)
     die("Database query failed in events.php.");
@@ -22,14 +22,24 @@
     $eventWebsite = $row[7];
      
     $query = "SELECT * FROM joins WHERE eventid = '$row[0]' AND userid = '$userid'";
-    $res = queryMysql($query);
+    $res = queryMysql($query) or die(mysql_error());
     $join = mysql_num_rows($res);
     if( $join > 0){
     	$join = 1;
     }
-	$query = "SELECT * FROM joins WHERE eventid = '$row[0]'";
+	$query = "SELECT firstname, lastname, program, year FROM user WHERE id = ANY (SELECT userid FROM joins WHERE eventid = '$row[0]')";
     $res = queryMysql($query) or die(mysql_error());
-    $numjoin = mysql_num_rows($res);
+    $numrows = mysql_num_rows($res);
+    $joinedArray;
+    for($i = 0; $i < $numrows; $i++){
+    	$r = mysql_fetch_row($res);
+    	$joinedArray[$i] =  array(
+    		"firstname" => $r[0],
+    		"lastname" => $r[1],
+    		"program" => $r[2],
+    		"year" => $r[3]
+    	);
+    }
     $events = array(
     "id" => $eventID,
     "title" => $eventTitle,
@@ -40,7 +50,7 @@
     "photo" => $eventPic,
     "url" => $eventWebsite,
     "join" => $join,
-    "numjoin" => $numjoin
+    "joined" => $joinedArray
     );
 	echo json_encode($events);
 
@@ -60,14 +70,25 @@
     $eventWebsite = $row[7];
      
     $query = "SELECT * FROM joins WHERE eventid = '$row[0]' AND userid = '$userid'";
-    $res = queryMysql($query);
+    $res = queryMysql($query) or die(mysql_error());
     $join = mysql_num_rows($res);
     if( $join > 0){
     	$join = 1;
     }
-	$query = "SELECT * FROM joins WHERE eventid = '$row[0]'";
+	$query = "SELECT firstname, lastname, program, year FROM user WHERE id = ANY (SELECT userid FROM joins WHERE eventid = '$row[0]')";
     $res = queryMysql($query) or die(mysql_error());
-    $numjoin = mysql_num_rows($res);
+    $numrows = mysql_num_rows($res);
+    $joinedArray;
+
+    for($i = 0; $i < $numrows; $i++){
+    	$r = mysql_fetch_row($res);
+    	$joinedArray[$i] =  array(
+    		"firstname" => $r[0],
+    		"lastname" => $r[1],
+    		"program" => $r[2],
+    		"year" => $r[3]
+    	);
+    }  
     $events = array(
     "id" => $eventID,
     "title" => $eventTitle,
@@ -78,9 +99,8 @@
     "photo" => $eventPic,
     "url" => $eventWebsite,
     "join" => $join,
-    "numjoin" => $numjoin
+    "joined" => $joinedArray
     );
-    
    echo json_encode($events);
    }
  echo ']}';
