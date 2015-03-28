@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Mar 28, 2015 at 07:35 AM
+-- Generation Time: Mar 28, 2015 at 08:50 AM
 -- Server version: 5.5.41-log
 -- PHP Version: 5.6.3
 
@@ -19,22 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `grapevinedb`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `_event`
---
-
-CREATE TABLE IF NOT EXISTS `_event` (
-`eventID` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `location` varchar(100) NOT NULL,
-  `date_time` varchar(20) NOT NULL,
-  `pic_url` varchar(400) DEFAULT NULL,
-  `description` varchar(400) DEFAULT NULL,
-  `collaborator` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -131,15 +115,25 @@ CREATE TABLE IF NOT EXISTS `tag` (
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `_event`
+--
+
+CREATE TABLE IF NOT EXISTS `_event` (
+`eventID` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `date_time` varchar(20) NOT NULL,
+  `pic_url` varchar(400) DEFAULT NULL,
+  `description` varchar(400) DEFAULT NULL,
+  `collaborator` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `_event`
---
-ALTER TABLE `_event`
- ADD PRIMARY KEY (`eventID`), ADD KEY `collaborator` (`collaborator`);
 
 --
 -- Indexes for table `collaborator`
@@ -190,6 +184,12 @@ ALTER TABLE `tag`
  ADD PRIMARY KEY (`name`);
 
 --
+-- Indexes for table `_event`
+--
+ALTER TABLE `_event`
+ ADD PRIMARY KEY (`eventID`), ADD KEY `collaborator` (`collaborator`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -201,12 +201,6 @@ MODIFY `eventID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `_event`
---
-ALTER TABLE `_event`
-ADD CONSTRAINT `_event_ibfk_1` FOREIGN KEY (`collaborator`) REFERENCES `collaborator` (`username`);
 
 --
 -- Constraints for table `collabtags`
@@ -242,6 +236,12 @@ ADD CONSTRAINT `joins_ibfk_2` FOREIGN KEY (`student`) REFERENCES `student` (`use
 ALTER TABLE `likes`
 ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`collaborator`) REFERENCES `collaborator` (`username`),
 ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`student`) REFERENCES `student` (`username`);
+
+--
+-- Constraints for table `_event`
+--
+ALTER TABLE `_event`
+ADD CONSTRAINT `_event_ibfk_1` FOREIGN KEY (`collaborator`) REFERENCES `collaborator` (`username`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
