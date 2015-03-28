@@ -1,0 +1,21 @@
+{
+  "events":[{
+  "id": 2,
+  "title": "Hack Western",
+  "collaborator": "MLH",
+  "time": "3/28/15 6:30 p",
+  "description": "Hackathon for 36 hours!",
+  "location": "University Community Centre",
+  "photo": "hackwesternlogo.png",
+  "url": "hackwestern.com"
+},{
+  "id": 1,
+  "title": "Breakfast at hack western",
+  "collaborator": "MLH",
+  "time": "3/29/15 8:00 a",
+  "description": "Eat food, its good",
+  "location": "The wave?",
+  "photo": "breakfast.jpeg",
+  "url": "hackwestern.com"
+}]
+}
