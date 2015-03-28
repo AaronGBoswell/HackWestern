@@ -1,10 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
 
+/*Utility Classes*/
+
+.rounded {
+    border-radius: 20px;   
+}
+
 /*Event Card*/
 
 #eventCon {
-    width: 80%;
     margin: 0 auto;
     background-color: #c91a9b;
     border-radius: 20px;
@@ -45,21 +50,6 @@
     margin: 20px auto;
     display: block;
     color: #ff00ff;
-}
-.cyan {
-    background-color: #00aeef;
-}
-
-.cyan:hover {
-    background-color: #008FC4;   
-}
-
-.yellow {
-    background-color: #FFB219;
-}
-
-.purple {
-    background-color: #8832B2; 
 }
 
 h1 {
@@ -135,8 +125,7 @@ h1 {
 	margin-left: 20px;
 	padding: 8px;
 	font-size: 16px;
-	border-radius: 7px;
-	border-radius: 7px;
+    border-radius: 20px;
 	background: #c91a9b; /* Old browsers */
     background: -moz-linear-gradient(top,  #c91a9b 0%, #a81592 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c91a9b), color-stop(100%,#a81592)); /* Chrome,Safari4+ */
@@ -189,5 +178,32 @@ h1 {
 #search fieldset {
     border: 0;
     outline: none;
+    float: right;
 }
+
+/*Submit Form*/
+
+#formCon {
+    background-color: #c91a9b;
+    border-radius: 20px;
+    margin-top: 2.375em;
+}
+
+#formCon input, #formCon textarea {
+    border-radius: 20px;
+    margin-top: 20px; 
+}
+
+#submit {
+    margin-top: 20px;   
+}
+
+
+@media screen and (min-width: 64.0625em) {
+#formCon input {
+    margin-top: 20px;   
+}
+}
+
+
 
