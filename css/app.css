@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#eventCon {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #8832B2;
+    border-radius: 20px;
+}
+
+#eventCon h1, #eventCon h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #FFB219; 
+}
+
+#eventCon h1 {
+    font-size: 1.375em;
+    font-weight: 800;
+    margin: 10px auto;
+    display: block;
+}
+
+#eventCon h2 {
+    font-size: 1em;
+    margin: 13px auto;
+    display: block;
+}
+
+#eventCon p {
+    font-family: 'Quattrocento', serif;
+    font-size: .75em;
+    color: #fff;
+    margin: 10px 15px;
+    display: block;
+}
+#eventCon ul li {
+    color: #FFB219;
+}
+
+#eventCon ul li a {
+    margin: 20px auto;
+    display: block;
+}
+.green {
+    background-color: #09B25F;
+}
+
+.green:hover {
+    background-color: #14CC72;   
+}
+
+.yellow {
+    background-color: #FFB219;
+}
+
+.purple {
+    background-color: #8832B2; 
+}
+
+h1 {
+ font-family: 'Oswald', sans-serif;   
+}
+
