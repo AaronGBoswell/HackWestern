@@ -1,27 +1,37 @@
 <div id="formCon" class="large-12 columns modal-body">
-     <form>
+     <form name="newEvent">
     <div class="row">
-    <div class="large-4 columns">
+    <div class="large-12 columns">
       <label id="title">
-        <input type="text" placeholder="Title" />
+        <input type="text" ng-model="newEv.title" placeholder="Title" required/>
       </label>
     </div>
-    <div class="large-4 columns">
+    <div class="large-12 columns">
       <label>
-        <input type="text" placeholder="Location" />
+        <input type="text" ng-model="newEv.location" placeholder="Location" required/>
       </label>
     </div>
-    <div class="large-4 columns">
-      <label>
-        <input type="text" placeholder="Time" />
-      </label>
+    <div class="row">
+        <div class="large-12 columns">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="shortDate" ng-model="myDate" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" required close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openy($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="large-12 columns">
+    		<timepicker required ng-model="myTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+    	</div>
     </div>
   </div>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns">
       <label>
-        <textarea placeholder="Description"></textarea>
-        <div class="small-12 medium-12 large-12 columns"><a href="#" id="submit" class="button rounded expand" ng-click="ok()">SUBMIT</a></div>
+        <textarea required ng-model="newEv.description" placeholder="Description"></textarea>
+        <div class="small-12 medium-12 large-12 columns"><button type="submit" id="submit" class="button rounded expand" ng-click="check(newEvent.$valid, newEv, myDate, myTime)">SUBMIT</button></div>
       </label>
     </div>
   </div>
